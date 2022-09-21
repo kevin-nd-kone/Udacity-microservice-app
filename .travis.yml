@@ -21,15 +21,15 @@ script:
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker build -t udagram-frontend ./udagram-frontend
   # prepare for update image on docker hub
-  - docker tag udagram-reverseproxy kevin6kone/udagram-reverseproxy:v1
-  - docker tag udagram-api-user kevin6kone/udagram-api-user:v1
-  - docker tag udagram-api-feed kevin6kone/udagram-api-feed:v1
-  - docker tag udagram-frontend kevin6kone/udagram-frontend:v1
+  - docker tag udagram-reverseproxy kevin6kone/udagram-reverseproxy:v2
+  - docker tag udagram-api-user kevin6kone/udagram-api-user:v2
+  - docker tag udagram-api-feed kevin6kone/udagram-api-feed:v2
+  - docker tag udagram-frontend kevin6kone/udagram-frontend:v2
 
 # task must be execute after process run successfully
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push kevin6kone/udagram-reverseproxy:v1
-  - docker push kevin6kone/udagram-api-user:v1
-  - docker push kevin6kone/udagram-api-feed:v1
-  - docker push kevin6kone/udagram-frontend:v1
+  - docker push kevin6kone/udagram-reverseproxy:v2
+  - docker push kevin6kone/udagram-api-user:v2
+  - docker push kevin6kone/udagram-api-feed:v2
+  - docker push kevin6kone/udagram-frontend:v2
