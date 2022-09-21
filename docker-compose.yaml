@@ -14,9 +14,9 @@ services:
       POSTGRES_USERNAME: microservice
       POSTGRES_PASSWORD: kevinKONE 
       POSTGRES_DB: postgres
-      POSTGRES_HOST: microservice-instance.c8enrw1n3di4.us-east-1.rds.amazonaws.com
-      AWS_REGION: us-west-1
-      AWS_PROFILE: microservice-user 
+      POSTGRES_HOST: microservice.ctbl441qu9hd.us-east-2.rds.amazonaws.com
+      AWS_REGION: us-east-2
+      AWS_PROFILE: microservice 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: testing
       URL: "http://localhost:8100"
@@ -28,9 +28,9 @@ services:
       POSTGRES_USERNAME: microservice
       POSTGRES_PASSWORD: kevinKONE 
       POSTGRES_DB: postgres
-      POSTGRES_HOST: microservice-instance.c8enrw1n3di4.us-east-1.rds.amazonaws.com
-      AWS_REGION: us-west-1
-      AWS_PROFILE: microservice-user 
+      POSTGRES_HOST: microservice.ctbl441qu9hd.us-east-2.rds.amazonaws.com
+      AWS_REGION: us-east-2
+      AWS_PROFILE: microservice 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: testing
       URL: "http://localhost:8100"
