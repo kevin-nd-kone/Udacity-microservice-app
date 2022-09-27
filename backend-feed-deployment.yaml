@@ -1,22 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: feed-api
+  name: feed
   labels:
-    app: feed-api
+    app: feed
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: feed-api
+      app: feed
   template:
     metadata:
       labels:
-        app: feed-api
+        app: feed
     spec:
       containers:
-      - name: udagram-api-feed
-        image: kevin6kone/udagram-api-feed:v2
+      - name: feed
+        image: kevin6kone/udagram-api-feed:v3
         ports:
-        - containerPort: 80
+          - containerPort: 8080
+        envFrom:
+          - configMapRef:
+              name: env-configmap
+          - secretRef:
+              name: env-secret
 

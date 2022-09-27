@@ -4,6 +4,9 @@ metadata:
   name: env-configmap #udagram-configmap for exemple
 data:
   AWS_REGION: us-east-2
-  AWS_PROFILE: microservice
-  AWS_BUCKET: arn:aws:s3:::microservice-211972899387-dev
+  POSTGRES_HOST: microservice.ctbl441qu9hd.us-east-2.rds.amazonaws.com
+  POSTGRES_DB: postgres
+  AWS_PROFILE: default
+  AWS_BUCKET: microservice-7138-5730-6136
+  JWT_SECRET: testing
   URL: http://localhost:8100

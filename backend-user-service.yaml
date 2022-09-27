@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: user-api
-  labels:
-    run: user-api
+  name: backend-user
 spec: 
   ports:
-  - port: 80
+  - port: 8080
     protocol: TCP
+    targetPort: 8080
   selector:
-    run: user-api
+    app: user

@@ -11,12 +11,12 @@ services:
   backend-user:
     image: udagram-api-user
     environment:
-      POSTGRES_USERNAME: microservice
+      POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: kevinKONE 
       POSTGRES_DB: postgres
-      POSTGRES_HOST: microservice.ctbl441qu9hd.us-east-2.rds.amazonaws.com
-      AWS_REGION: us-east-2
-      AWS_PROFILE: microservice 
+      POSTGRES_HOST: kevinaws.cl8ectk0xwfm.us-east-2.rds.amazonaws.com
+      AWS_REGION: $AWS_REGION
+      AWS_PROFILE: default 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: testing
       URL: "http://localhost:8100"
@@ -25,12 +25,12 @@ services:
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
-      POSTGRES_USERNAME: microservice
+      POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: kevinKONE 
       POSTGRES_DB: postgres
-      POSTGRES_HOST: microservice.ctbl441qu9hd.us-east-2.rds.amazonaws.com
-      AWS_REGION: us-east-2
-      AWS_PROFILE: microservice 
+      POSTGRES_HOST: kevinaws.cl8ectk0xwfm.us-east-2.rds.amazonaws.com
+      AWS_REGION: $AWS_REGION
+      AWS_PROFILE: default 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: testing
       URL: "http://localhost:8100"
