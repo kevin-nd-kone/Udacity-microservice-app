@@ -16,5 +16,4 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
     - run: echo "Helloworld for github action"
