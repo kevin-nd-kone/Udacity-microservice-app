@@ -26,11 +26,11 @@ jobs:
     - run: docker tag udagram-reverseproxy kevin6kone/udagram-reverseproxy:v3
     - run: docker tag udagram-api-user kevin6kone/udagram-api-user:v3
     - run: docker tag udagram-api-feed kevin6kone/udagram-api-feed:v3
-    - run: docker tag udagram-frontend kevin6kone/udagram-frontend:v3
+    - run: docker tag udagram-frontend kevin6kone/udagram-frontend:v4
     
     # push image on dockerhub
     - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u "${{secrets.DOCKER_USERNAME}}" --password-stdin
     - run: docker push kevin6kone/udagram-reverseproxy:v3
     - run: docker push kevin6kone/udagram-api-user:v3
     - run: docker push kevin6kone/udagram-api-feed:v3
-    - run: docker push kevin6kone/udagram-frontend:v3
+    - run: docker push kevin6kone/udagram-frontend:v4
