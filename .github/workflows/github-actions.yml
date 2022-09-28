@@ -16,4 +16,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: echo "Helloworld for github action"
+    - run: docker --version
+      # Build images
+    - run: docker build -t udagram-reverseproxy ./udagram-reverseproxy
+    - run: docker build -t udagram-api-user ./udagram-api-user
+    - run: docker build -t udagram-api-feed ./udagram-api-feed
+    - run: docker build -t udagram-frontend ./udagram-frontend
+      # prepare for update image on docker hub
+    - run: docker tag udagram-reverseproxy kevin6kone/udagram-reverseproxy:v3
+    - run: docker tag udagram-api-user kevin6kone/udagram-api-user:v3
+    - run: docker tag udagram-api-feed kevin6kone/udagram-api-feed:v3
+    - run: docker tag udagram-frontend kevin6kone/udagram-frontend:v3
+    
+    # push image on dockerhub
+    - run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - run: docker push kevin6kone/udagram-reverseproxy:v3
+    - run: docker push kevin6kone/udagram-api-user:v3
+    - run: docker push kevin6kone/udagram-api-feed:v3
+    - run: docker push kevin6kone/udagram-frontend:v3
