@@ -17,6 +17,10 @@ spec:
       containers:
         - name: backend-user
           image: kevin6kone/udagram-api-user:v3
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
           ports:
             - containerPort: 8080
           envFrom:
